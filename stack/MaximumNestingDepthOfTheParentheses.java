@@ -42,7 +42,7 @@
 
 // import java.util.Stack;
 
-class MaximumNestingDepthOfTheParanthesis {
+class MaximumNestingDepthOfTheParentheses {
 
     // -------------------Using Stack-------------------
 
