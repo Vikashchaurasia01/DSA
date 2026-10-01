@@ -102,47 +102,6 @@ class Solution {
     int m, n;
     boolean[][][] memo;
 
-    private boolean checkParentheses(String s) {
-        Stack<Character> st = new Stack<>();
-
-        for (char ch : s.toCharArray()) {
-            if (ch == '(') {
-                st.push(ch);
-            } else {
-                if (st.isEmpty())
-                    return false;
-                st.pop();
-            }
-        }
-
-        return st.isEmpty();
-    }
-
-    private boolean solve(char[][] grid, int i, int j, int open) {
-        if (i >= m || j >= n) {
-            return false;
-        }
-
-        open += grid[i][j] == '(' ? 1 : -1;
-
-        if (open < 0)
-            return false;
-
-        if (i == m - 1 && j == n - 1) {
-            return memo[i][j][open] = (open == 0);
-        }
-
-        if (memo[i][j][open] != false)
-            return memo[i][j][open];
-
-        boolean down = solve(grid, i + 1, j, open);
-        boolean right = solve(grid, i, j + 1, open);
-
-        boolean res = down || right;
-
-        return memo[i][j][open] = res;
-    }
-
     public boolean hasValidPath(char[][] grid) {
         m = grid.length;
         n = grid[0].length;
