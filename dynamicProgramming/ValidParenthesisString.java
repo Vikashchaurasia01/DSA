@@ -74,3 +74,40 @@ public class ValidParenthesisString {
         return solve(s, 0, 0); // string, idx, bal
     }
 }
+
+// ------------------------- Bottom - Up -----------------------------
+class Solution {
+
+    public boolean checkValidString(String s) {
+        int n = s.length();
+
+        boolean[][] dp = new boolean[n + 1][n + 2];
+        dp[n][0] = true;
+
+        for (int idx = n - 1; idx >= 0; idx--) {
+            char ch = s.charAt(idx);
+            for (int bal = 0; bal <= n; bal++) {
+                if (ch == '(') {
+                    dp[idx][bal] = dp[idx + 1][bal + 1];
+                    continue;
+                }
+
+                if (ch == ')') {
+                    dp[idx][bal] = bal > 0 ? dp[idx + 1][bal - 1] : false;
+                    continue;
+                }
+
+                boolean isValid = dp[idx + 1][bal + 1];
+
+                if(bal > 0)
+                    isValid |= dp[idx + 1][bal - 1];
+
+                isValid |= dp[idx + 1][bal];
+
+                dp[idx][bal] = isValid;
+            }
+        }
+
+        return dp[0][0];
+    }
+}
