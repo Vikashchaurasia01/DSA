@@ -76,7 +76,7 @@ public class ValidParenthesisString {
 }
 
 // ------------------------- Bottom - Up -----------------------------
-class Solution {
+class Solution1 {
 
     public boolean checkValidString(String s) {
         int n = s.length();
