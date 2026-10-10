@@ -1,4 +1,4 @@
-package simpleIteration;
+package iteration;
 
 /*
     Given a string s of '(' and ')' parentheses, we add the minimum number of parentheses ( '(' or ')', and in any positions ) so that the resulting parentheses string is valid.
