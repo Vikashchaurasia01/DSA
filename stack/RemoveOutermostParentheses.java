@@ -1,5 +1,7 @@
 package stack;
 
+import java.util.Stack;
+
 /*
     A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.
 
@@ -63,26 +65,24 @@ class RemoveOutermostParentheses {
 
         return sb.toString();
     }
-}
 
+    // using stack
+    // public String removeOuterParentheses(String s) {
+    //     Stack<Character> stack = new Stack<>();
+    //     StringBuilder sb = new StringBuilder();
 
-class Solution {
-    public String removeOuterParentheses(String s) {
-        Stack<Character> stack = new Stack<>();
-        StringBuilder sb = new StringBuilder();
+    //     for(char ch : s.toCharArray()) {
+    //         if(ch == '(') {
+    //             if(!stack.isEmpty()) sb.append(ch);
 
-        for(char ch : s.toCharArray()) {
-            if(ch == '(') {
-                if(!stack.isEmpty()) sb.append(ch);
+    //             stack.push(ch);
+    //         } else {
+    //             stack.pop();
 
-                stack.push(ch);
-            } else {
-                stack.pop();
+    //             if(!stack.isEmpty()) sb.append(ch);
+    //         }
+    //     }
 
-                if(!stack.isEmpty()) sb.append(ch);
-            }
-        }
-
-        return sb.toString();
-    }
+    //     return sb.toString();
+    // }
 }
