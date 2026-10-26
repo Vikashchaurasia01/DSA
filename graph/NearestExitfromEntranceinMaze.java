@@ -54,6 +54,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class NearestExitfromEntranceinMaze {
+
+    // Tried using DFS but got TLE coz 2^100 is a very huge value
     class Solution {
         int[] entrance;
 
@@ -97,6 +99,8 @@ public class NearestExitfromEntranceinMaze {
             return res >= 100000 ? -1 : res;
         }
     }
+
+    // To find the shortest path, always use BFS, IT TAKES MIN STPS TO FIND THE MIN STEPS.
 
     public int nearestExit(char[][] maze, int[] entrance) {
         int m = maze.length, n = maze[0].length;
