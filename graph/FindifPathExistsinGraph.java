@@ -33,6 +33,8 @@
     0 <= source, destination <= n - 1
     There are no duplicate edges.
     There are no self edges.
+
+    Approach: Created an adjacency list and then traversing and finding the the curr node equals to destination node.
 */
 
 import java.util.ArrayList;
