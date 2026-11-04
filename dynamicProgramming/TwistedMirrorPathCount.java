@@ -1,4 +1,4 @@
-package dynamicProgramming;
+package dynamicprogramming;
 
 /*
     Given an m x n binary grid grid where:
