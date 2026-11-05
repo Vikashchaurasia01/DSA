@@ -30,6 +30,14 @@ import java.util.TreeMap;
     Constraints:
     1 <= k <= nums.length <= 10^5
     -2^31 <= nums[i] <= 2^31 - 1
+
+    Approach:
+    1. Use two TreeMaps to maintain the left and right halves of the sliding window to efficiently find the median.
+    2. The left TreeMap will store the smaller half of the numbers, and the right TreeMap will store the larger half.
+    3. When adding a new number, insert it into the appropriate TreeMap and then rebalance the two TreeMaps
+       if necessary to ensure that the left TreeMap has at most one more element than the right TreeMap.
+    4. When removing an outgoing number, remove it from the appropriate TreeMap and then rebalance the two TreeMaps again if necessary.
+    5. The median can be found by checking the sizes of the two TreeMaps.
 */
 
 public class SlidingWindowMedian {
