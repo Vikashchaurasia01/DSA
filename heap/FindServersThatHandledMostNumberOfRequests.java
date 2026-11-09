@@ -44,6 +44,12 @@
     arrival.length == load.length
     1 <= arrival[i], load[i] <= 10^9
     arrival is strictly increasing.
+
+    Approach: We can use a TreeSet to keep track of available servers and a PriorityQueue to keep track of busy servers.
+    For each request, we will check if there are any available servers. If there are, we will assign the request to the next
+    available server according to the rules given in the problem statement. If there are no available servers,
+    we will drop the request. We will also keep track of the number of requests handled by each server and return the IDs of the
+    busiest server(s) at the end.
 */
 
 import java.util.ArrayList;
